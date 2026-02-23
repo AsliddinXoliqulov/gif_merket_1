@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gift Market - Sovg'alar Do'koni</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1>🎁 Gift Market</h1>
+                </div>
+                <nav class="nav">
+                    <a href="#home" class="nav-link active">Bosh sahifa</a>
+                    <a href="#products" class="nav-link">Mahsulotlar</a>
+                    <a href="#about" class="nav-link">Biz haqimizda</a>
+                    <a href="#contact" class="nav-link">Aloqa</a>
+                </nav>
+                <div class="header-actions">
+                    <button class="search-btn" id="searchBtn">🔍</button>
+                    <button class="cart-btn" id="cartBtn">
+                        🛒 Savat
+                        <span class="cart-count" id="cartCount">0</span>
+                    </button>
+                    <button class="menu-toggle" id="menuToggle">☰</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Search Modal -->
+    <div class="search-modal" id="searchModal">
+        <div class="search-modal-content">
+            <input type="text" class="search-input" id="searchInput" placeholder="Mahsulot qidirish...">
+            <button class="close-search" id="closeSearch">✕</button>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h2 class="hero-title">Eng chiroyli sovg'alar</h2>
+                <p class="hero-subtitle">Sevimli odamlaringiz uchun maxsus sovg'alar toping</p>
+                <button class="btn btn-primary" onclick="document.getElementById('products').scrollIntoView({behavior: 'smooth'})">
+                    Mahsulotlarni ko'rish
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories -->
+    <section class="categories">
+        <div class="container">
+            <h2 class="section-title">Kategoriyalar</h2>
+            <div class="category-grid">
+                <div class="category-card" data-category="all">
+                    <div class="category-icon">🎁</div>
+                    <h3>Barchasi</h3>
+                </div>
+                <div class="category-card" data-category="flowers">
+                    <div class="category-icon">🌸</div>
+                    <h3>Gullar</h3>
+                </div>
+                <div class="category-card" data-category="jewelry">
+                    <div class="category-icon">💍</div>
+                    <h3>Zargarlik buyumlari</h3>
+                </div>
+                <div class="category-card" data-category="electronics">
+                    <div class="category-icon">📱</div>
+                    <h3>Elektronika</h3>
+                </div>
+                <div class="category-card" data-category="books">
+                    <div class="category-icon">📚</div>
+                    <h3>Kitoblar</h3>
+                </div>
+                <div class="category-card" data-category="toys">
+                    <div class="category-icon">🧸</div>
+                    <h3>O'yinchoqlar</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products" id="products">
+        <div class="container">
+            <h2 class="section-title">Mahsulotlar</h2>
+            <div class="products-grid" id="productsGrid">
+                <!-- Products will be dynamically loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h2>Savat</h2>
+            <button class="close-cart" id="closeCart">✕</button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <div class="empty-cart">
+                <p>Savat bo'sh</p>
+            </div>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Jami:</span>
+                <span class="total-price" id="totalPrice">0 so'm</span>
+            </div>
+            <button class="btn btn-primary btn-checkout" id="checkoutBtn">Buyurtma berish</button>
+        </div>
+    </div>
+
+    <!-- Cart Overlay -->
+    <div class="cart-overlay" id="cartOverlay"></div>
+
+    <!-- Product Detail Modal -->
+    <div class="product-modal" id="productModal">
+        <div class="product-modal-overlay" id="productModalOverlay"></div>
+        <div class="product-modal-content">
+            <button class="close-product-modal" id="closeProductModal">✕</button>
+            <div class="product-detail-container" id="productDetailContainer">
+                <!-- Product details will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <h2 class="section-title">Biz haqimizda</h2>
+            <div class="about-content">
+                <p>Gift Market - bu sevimli odamlaringiz uchun eng chiroyli va maxsus sovg'alarni topish uchun eng yaxshi joy. Biz sizga keng assortimentdagi mahsulotlarni taklif qilamiz.</p>
+                <div class="features">
+                    <div class="feature">
+                        <div class="feature-icon">🚚</div>
+                        <h3>Tez yetkazib berish</h3>
+                        <p>24 soat ichida yetkazib beramiz</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">💯</div>
+                        <h3>Yuqori sifat</h3>
+                        <p>Barcha mahsulotlarimiz sifatli</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">💰</div>
+                        <h3>Qulay narxlar</h3>
+                        <p>Eng yaxshi narxlarni taklif qilamiz</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">Aloqa</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <span class="contact-icon">📞</span>
+                        <span>+998 90 123 45 67</span>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">✉️</span>
+                        <span>info@giftmarket.uz</span>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">📍</span>
+                        <span>Toshkent shahri</span>
+                    </div>
+                </div>
+                <form class="contact-form" id="contactForm">
+                    <input type="text" placeholder="Ismingiz" required>
+                    <input type="email" placeholder="Email" required>
+                    <textarea placeholder="Xabaringiz" rows="5" required></textarea>
+                    <button type="submit" class="btn btn-primary">Yuborish</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Gift Market</h3>
+                    <p>Eng chiroyli sovg'alar</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Havolalar</h4>
+                    <a href="#home">Bosh sahifa</a>
+                    <a href="#products">Mahsulotlar</a>
+                    <a href="#about">Biz haqimizda</a>
+                    <a href="#contact">Aloqa</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Ijtimoiy tarmoqlar</h4>
+                    <div class="social-links">
+                        <a href="#">Facebook</a>
+                        <a href="#">Instagram</a>
+                        <a href="#">Telegram</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Gift Market. Barcha huquqlar himoyalangan.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
