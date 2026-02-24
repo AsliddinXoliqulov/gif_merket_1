@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gift Market - Sovg'alar Do'koni</title>
+    <title>Print City</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="./image/favicon.svg" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -15,7 +16,8 @@
         <div class="container">
             <div class="header-content">
                 <div class="logo">
-                    <h1>🎁 Gift Market</h1>
+                    <img src="./image/logo.svg" alt="">
+                    <h1>Print City</h1>
                 </div>
                 <nav class="nav">
                     <a href="#home" class="nav-link active">Bosh sahifa</a>
@@ -23,8 +25,7 @@
                     <a href="#about" class="nav-link">Biz haqimizda</a>
                     <a href="#contact" class="nav-link">Aloqa</a>
                 </nav>
-                <div class="header-actions">
-                    <button class="search-btn" id="searchBtn">🔍</button>
+                <div  class="header-actions">
                     <button class="cart-btn" id="cartBtn">
                         🛒 Savat
                         <span class="cart-count" id="cartCount">0</span>
@@ -34,14 +35,6 @@
             </div>
         </div>
     </header>
-
-    <!-- Search Modal -->
-    <div class="search-modal" id="searchModal">
-        <div class="search-modal-content">
-            <input type="text" class="search-input" id="searchInput" placeholder="Mahsulot qidirish...">
-            <button class="close-search" id="closeSearch">✕</button>
-        </div>
-    </div>
 
     <!-- Hero Section -->
     <section class="hero" id="home">
@@ -83,7 +76,7 @@
                 </div>
                 <div class="category-card" data-category="toys">
                     <div class="category-icon">🧸</div>
-                    <h3>O'yinchoqlar</h3>
+                    <h3>Bloknot</h3>
                 </div>
             </div>
         </div>
@@ -92,7 +85,13 @@
     <!-- Products Section -->
     <section class="products" id="products">
         <div class="container">
-            <h2 class="section-title">Mahsulotlar</h2>
+            <div class="products-header">
+                <h2 class="section-title">Mahsulotlar</h2>
+                <div class="search-div">
+                    <input type="text" class="products-search-input" id="searchInput" placeholder="Mahsulot qidirish...">
+                    <button class="clear_btn" id="clearBtn">✖</button>
+                </div>
+            </div>
             <div class="products-grid" id="productsGrid">
                 <!-- Products will be dynamically loaded here -->
             </div>
@@ -125,8 +124,8 @@
     <!-- Product Detail Modal -->
     <div class="product-modal" id="productModal">
         <div class="product-modal-overlay" id="productModalOverlay"></div>
+        <button class="close-product-modal" id="closeProductModal">✕</button>
         <div class="product-modal-content">
-            <button class="close-product-modal" id="closeProductModal">✕</button>
             <div class="product-detail-container" id="productDetailContainer">
                 <!-- Product details will be loaded here -->
             </div>
@@ -143,7 +142,7 @@
                     <div class="feature">
                         <div class="feature-icon">🚚</div>
                         <h3>Tez yetkazib berish</h3>
-                        <p>24 soat ichida yetkazib beramiz</p>
+                        <p>Yandex yoki BTS orqali yetkazib beramiz</p>
                     </div>
                     <div class="feature">
                         <div class="feature-icon">💯</div>

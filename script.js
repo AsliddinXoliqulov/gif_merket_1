@@ -5,156 +5,14 @@ const categoryNames = {
     jewelry: "Zargarlik buyumlari",
     electronics: "Elektronika",
     books: "Kitoblar",
-    toys: "O'yinchoqlar"
+    toys: "Bloknot"
 };
 
-// Mahsulotlar ma'lumotlari
-const products = [
-    {
-        id: 1,
-        name: "Qizil atirgul guldastasi",
-        description: "Chiroyli qizil atirgullar guldastasi. Bu guldasta sevgi va mehr ramzi bo'lib, sevimli odamlaringizga sovg'a qilish uchun ajoyib tanlov. Tabiiy gullar bilan tayyorlangan va maxsus qutida yetkazib beriladi.",
-        price: 150000,
-        category: "flowers",
-        categoryName: "Gullar",
-        emoji: "🌹",
-        stock: 15,
-        sales: 234,
-        images: ["🌹", "🌺", "🌸", "🌷"]
-    },
-    {
-        id: 2,
-        name: "Kumush uzuk",
-        description: "Zamonaviy dizayndagi kumush uzuk. Elegant va zamonaviy ko'rinishga ega bo'lgan bu uzuk har qanday kiyimga mos keladi. Yuqori sifatli kumushdan tayyorlangan.",
-        price: 500000,
-        category: "jewelry",
-        categoryName: "Zargarlik buyumlari",
-        emoji: "💍",
-        stock: 8,
-        sales: 156,
-        images: ["💍", "💎", "✨", "👑"]
-    },
-    {
-        id: 3,
-        name: "Smartfon",
-        description: "Eng yangi model smartfon. Yuqori samaradorlik, ajoyib kamera va uzun batareya muddati bilan. Zamonaviy texnologiyalar bilan jihozlangan.",
-        price: 5000000,
-        category: "electronics",
-        categoryName: "Elektronika",
-        emoji: "📱",
-        stock: 5,
-        sales: 89,
-        images: ["📱", "📲", "💻", "⌚"]
-    },
-    {
-        id: 4,
-        name: "Kitoblar to'plami",
-        description: "Bestseller kitoblar to'plami. Eng mashhur mualliflar asarlaridan iborat. Har bir kitob o'qishga qiziqarli va foydali.",
-        price: 200000,
-        category: "books",
-        categoryName: "Kitoblar",
-        emoji: "📚",
-        stock: 25,
-        sales: 312,
-        images: ["📚", "📖", "📕", "📗"]
-    },
-    {
-        id: 5,
-        name: "O'yinchoq ayiq",
-        description: "Yumshoq o'yinchoq ayiq. Bolalar uchun ajoyib sovg'a. Yuqori sifatli materialdan tayyorlangan va xavfsiz.",
-        price: 80000,
-        category: "toys",
-        categoryName: "O'yinchoqlar",
-        emoji: "🧸",
-        stock: 30,
-        sales: 445,
-        images: ["🧸", "🐻", "🎁", "🎈"]
-    },
-    {
-        id: 6,
-        name: "Sariq guldasta",
-        description: "Quyosh rangidagi gullar. Quyoshdek yorug' va quvnoq ranglar bilan sizning kunningizni yanada yorug'roq qiladi.",
-        price: 120000,
-        category: "flowers",
-        categoryName: "Gullar",
-        emoji: "🌻",
-        stock: 20,
-        sales: 189,
-        images: ["🌻", "🌼", "🌷", "🌹"]
-    },
-    {
-        id: 7,
-        name: "Oltin zanjir",
-        description: "Elegant oltin zanjir. Klassik dizayn bilan zamonaviy uslubni uyg'unlashtirgan. Har qanday holatga mos keladi.",
-        price: 800000,
-        category: "jewelry",
-        categoryName: "Zargarlik buyumlari",
-        emoji: "⛓️",
-        stock: 12,
-        sales: 98,
-        images: ["⛓️", "💍", "💎", "✨"]
-    },
-    {
-        id: 8,
-        name: "Noutbuk",
-        description: "Yuqori samaradorlikdagi noutbuk. Ish va o'yinlar uchun ideal. Kuchli protsessor va yaxshi ekran sifati.",
-        price: 8000000,
-        category: "electronics",
-        categoryName: "Elektronika",
-        emoji: "💻",
-        stock: 3,
-        sales: 45,
-        images: ["💻", "⌨️", "🖥️", "📱"]
-    },
-    {
-        id: 9,
-        name: "Romantik roman",
-        description: "Sevgi haqidagi roman. Chuqur hissiyotlar va qiziqarli syujet bilan. O'qishni yaxshi ko'radiganlar uchun.",
-        price: 60000,
-        category: "books",
-        categoryName: "Kitoblar",
-        emoji: "📖",
-        stock: 40,
-        sales: 567,
-        images: ["📖", "📚", "📕", "📗"]
-    },
-    {
-        id: 10,
-        name: "O'yinchoq mashina",
-        description: "Radioboshqaruvli mashina. Bolalar uchun ajoyib sovg'a. Uzoq masofadan boshqariladi va tez harakatlanadi.",
-        price: 150000,
-        category: "toys",
-        categoryName: "O'yinchoqlar",
-        emoji: "🚗",
-        stock: 18,
-        sales: 234,
-        images: ["🚗", "🚙", "🏎️", "🚕"]
-    },
-    {
-        id: 11,
-        name: "Qizil va oq gullar",
-        description: "Arlekin guldasta. Qizil va oq ranglarining chiroyli kombinatsiyasi. Maxsus holatlar uchun ideal.",
-        price: 180000,
-        category: "flowers",
-        categoryName: "Gullar",
-        emoji: "🌺",
-        stock: 22,
-        sales: 278,
-        images: ["🌺", "🌹", "🌻", "🌸"]
-    },
-    {
-        id: 12,
-        name: "Marvarid marjon",
-        description: "Tabiiy marvarid marjon. Klassik va zamonaviy dizayn. Har qanday kiyimga mos keladi va elegan ko'rinish beradi.",
-        price: 600000,
-        category: "jewelry",
-        categoryName: "Zargarlik buyumlari",
-        emoji: "📿",
-        stock: 10,
-        sales: 123,
-        images: ["📿", "💍", "💎", "✨"]
-    }
-];
+// API manzili (MockAPI)
+const API_URL = "https://68247ca60f0188d7e7297d7a.mockapi.io/people/gift_market";
+
+// Mahsulotlar ro'yxati (API dan to'ldiriladi)
+let products = [];
 
 // Savat ma'lumotlari
 let cart = [];
@@ -165,7 +23,7 @@ let currentProductImages = [];
 
 // DOM elementlar - DOMContentLoaded ichida o'rnatiladi
 let productsGrid, cartBtn, cartSidebar, cartOverlay, closeCart, cartItems, cartCount, totalPrice, checkoutBtn;
-let searchBtn, searchModal, closeSearch, searchInput;
+let searchInput, clearBtn;
 let categoryCards, menuToggle, nav, contactForm;
 let productModal, productModalOverlay, closeProductModalBtn, productDetailContainer;
 
@@ -180,10 +38,8 @@ function initDOMElements() {
     cartCount = document.getElementById('cartCount');
     totalPrice = document.getElementById('totalPrice');
     checkoutBtn = document.getElementById('checkoutBtn');
-    searchBtn = document.getElementById('searchBtn');
-    searchModal = document.getElementById('searchModal');
-    closeSearch = document.getElementById('closeSearch');
     searchInput = document.getElementById('searchInput');
+    clearBtn = document.getElementById('clearBtn');
     categoryCards = document.querySelectorAll('.category-card');
     menuToggle = document.getElementById('menuToggle');
     nav = document.querySelector('.nav');
@@ -223,9 +79,20 @@ function displayProducts() {
         return;
     }
 
+    // Kategoriya kartalariga scroll harakati
+    document.querySelectorAll('.category-card').forEach(card => {
+        card.addEventListener('click', () => {
+            document.getElementById('products').scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+
     filteredProducts.forEach(product => {
         const productCard = document.createElement('div');
-        productCard.className = 'product-card';
+        const isAvailable = product.sale !== false; // sale false bo'lsa, mahsulot tugagan
+
+        productCard.className = 'product-card' + (isAvailable ? '' : ' unavailable');
         productCard.style.cursor = 'pointer';
         productCard.addEventListener('click', (e) => {
             // Agar button yoki uning ichidagi elementga bosilgan bo'lsa, modal ochilmasin
@@ -233,18 +100,25 @@ function displayProducts() {
                 openProductModal(product.id);
             }
         });
+
+        const hasImage = product.images && product.images.length > 0;
+        const mainImage = hasImage
+            ? `<img src="${product.images[0]}" alt="${product.name}">`
+            : (product.emoji || '🎁');
+
         productCard.innerHTML = `
             <div class="product-image">
-                ${product.emoji}
-                <div class="product-category-badge">${product.categoryName || categoryNames[product.category]}</div>
+                ${mainImage}
+                <div class="product-category-badge">${product.categoryName || categoryNames[product.category] || ''}</div>
+                ${!isAvailable ? '<div class="product-status-badge">Tugagan</div>' : ''}
             </div>
             <div class="product-info">
                 <h3 class="product-name">${product.name}</h3>
                 <p class="product-description">${product.description}</p>
                 <div class="product-footer">
                     <span class="product-price">${formatPrice(product.price)}</span>
-                    <button class="add-to-cart" onclick="event.stopPropagation(); addToCart(${product.id})">
-                        Savatga qo'shish
+                    <button class="add-to-cart ${!isAvailable ? 'disabled' : ''}" ${!isAvailable ? 'disabled' : ''} onclick="event.stopPropagation(); addToCart(${product.id})">
+                        Savatga 
                     </button>
                 </div>
             </div>
@@ -262,6 +136,12 @@ function formatPrice(price) {
 function addToCart(productId) {
     const product = products.find(p => p.id === productId);
     if (!product) return;
+
+    // Agar mahsulot sale=false bo'lsa, tugagan deb hisoblaymiz
+    if (product.sale === false) {
+        showNotification('Bu mahsulot tugagan.');
+        return;
+    }
 
     const existingItem = cart.find(item => item.id === productId);
     
@@ -281,6 +161,14 @@ function addToCart(productId) {
 // Savatni yangilash
 function updateCart() {
     if (!cartCount) return;
+
+    // Savatni localStorage ga saqlash
+    try {
+        localStorage.setItem('gift_market_cart', JSON.stringify(cart));
+    } catch (e) {
+        console.error('Savatni saqlashda xato:', e);
+    }
+
     cartCount.textContent = cart.reduce((sum, item) => sum + item.quantity, 0);
     displayCartItems();
     updateTotal();
@@ -296,7 +184,8 @@ function displayCartItems() {
 
     cartItems.innerHTML = cart.map(item => `
         <div class="cart-item">
-            <div class="cart-item-image">${item.emoji}</div>
+            <div class="cart-item-image"><img src="${item.images?.[0] || '/no-image.png'}" alt="${item.name}"></div>
+
             <div class="cart-item-info">
                 <div class="cart-item-name">${item.name}</div>
                 <div class="cart-item-price">${formatPrice(item.price)}</div>
@@ -380,16 +269,77 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
+// Mahsulotlarni API dan yuklash (MockAPI dan)
+async function loadProducts() {
+    if (productsGrid) {
+        productsGrid.innerHTML = '<p style="grid-column: 1/-1; text-align: center; padding: 3rem; color: #999;">Mahsulotlar yuklanmoqda...</p>';
+    }
+
+    try {
+        const response = await fetch(API_URL);
+        const data = await response.json();
+
+        // API dan kelgan ma'lumotlarni bizning formatga o'giramiz
+        products = data.map((item, index) => {
+            const imgs = Array.isArray(item.img) ? item.img : [];
+
+            return {
+                // API dagi id bilan bir xil (raqamga aylantiramiz)
+                id: Number(item.id),
+                // Nomi
+                name: item.name || `Mahsulot ${item.id}`,
+                // Tavsif (about), agar false bo'lsa, category ni ko'rsatamiz
+                description: typeof item.about === 'string' && item.about
+                    ? item.about
+                    : `Kategoriya: ${item.category}`,
+                // Narx: API dan kelgan qiymatni so'mga moslashtiramiz
+                price: Number(item.price) * 1000,
+                // Kategoriya filtrlash uchun ichki nom (oddiy qilib category dan yasaymiz)
+                category: (item.category || 'boshqa').toLowerCase(),
+                // Foydalanuvchiga ko'rinadigan kategoriya nomi
+                categoryName: item.category || 'Kategoriya',
+                // Sale: API dan to'g'ridan-to'g'ri olamiz (true/false)
+                sale: item.sale,
+                // Sotuvlar soni
+                sales: Number(item.salenumber) || 0,
+                // Qolgan soni (oddiy hisob-kitob, hozircha salenumber asosida)
+                stock: 10 + (Number(item.salenumber) % 20),
+                // Rasmlar massivi (img array)
+                images: imgs,
+                // Fallback uchun emoji (rasm bo'lmasa)
+                emoji: '🎁'
+            };
+        });
+
+        displayProducts();
+    } catch (error) {
+        console.error('Mahsulotlarni yuklashda xato:', error);
+        if (productsGrid) {
+            productsGrid.innerHTML = '<p style="grid-column: 1/-1; text-align: center; padding: 3rem; color: #e74c3c;">Mahsulotlarni yuklashda xatolik yuz berdi.</p>';
+        }
+    }
+}
+
 // Animatsiya uchun elementlarni kuzatish
 document.addEventListener('DOMContentLoaded', () => {
     // DOM elementlarini o'rnatish
     initDOMElements();
+
+    // LocalStorage dan savatni yuklash
+    try {
+        const savedCart = localStorage.getItem('gift_market_cart');
+        if (savedCart) {
+            cart = JSON.parse(savedCart) || [];
+        }
+    } catch (e) {
+        console.error('Savatni yuklashda xato:', e);
+    }
     
     // Event listenerlarni o'rnatish
     initEventListeners();
     
-    // Dastlabki mahsulotlarni ko'rsatish
-    displayProducts();
+    // Mahsulotlarni API dan yuklash
+    loadProducts();
     updateCart();
     
     // Animatsiyalar uchun elementlarni kuzatish
@@ -446,36 +396,7 @@ function initEventListeners() {
         });
     }
 
-    // Qidiruvni ochish/yopish
-    if (searchBtn) {
-        searchBtn.addEventListener('click', () => {
-            if (searchModal && searchInput) {
-                searchModal.classList.add('active');
-                searchInput.focus();
-            }
-        });
-    }
-
-    if (closeSearch) {
-        closeSearch.addEventListener('click', () => {
-            if (searchModal && searchInput) {
-                searchModal.classList.remove('active');
-                searchInput.value = '';
-                searchQuery = '';
-                displayProducts();
-            }
-        });
-    }
-
-    if (searchModal) {
-        searchModal.addEventListener('click', (e) => {
-            if (e.target === searchModal) {
-                searchModal.classList.remove('active');
-            }
-        });
-    }
-
-    // Qidiruv funksiyasi
+    // Qidiruv funksiyasi (input mahsulotlar bo'limida)
     if (searchInput) {
         searchInput.addEventListener('input', (e) => {
             searchQuery = e.target.value;
@@ -488,6 +409,12 @@ function initEventListeners() {
             }
         });
     }
+clearBtn.addEventListener("click", () => {
+  searchInput.value = "";
+  searchQuery = "";
+  displayProducts();
+  searchInput.focus();
+});
 
     // Buyurtma berish
     if (checkoutBtn) {
