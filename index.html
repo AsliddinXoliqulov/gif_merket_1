@@ -1,31 +1,39 @@
 <!DOCTYPE html>
 <html lang="uz">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Print City</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="shortcut icon" href="./image/favicon.svg" type="image/x-icon">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/modals.css">
+    <link rel="stylesheet" href="./css/layout.css">
+    <link rel="shortcut icon" href="./image/favicon.svg" type="image/x-icon" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
 </head>
+
 <body>
-    <!-- Header -->
     <header class="header">
         <div class="container">
             <div class="header-content">
                 <div class="logo">
-                    <img src="./image/logo.svg" alt="">
+                    <img src="./image/logo.svg" alt="" />
                     <h1>Print City</h1>
                 </div>
+
                 <nav class="nav">
                     <a href="#home" class="nav-link active">Bosh sahifa</a>
                     <a href="#products" class="nav-link">Mahsulotlar</a>
                     <a href="#about" class="nav-link">Biz haqimizda</a>
                     <a href="#contact" class="nav-link">Aloqa</a>
                 </nav>
-                <div  class="header-actions">
+
+                <div class="header-actions">
                     <button class="cart-btn" id="cartBtn">
                         🛒 Savat
                         <span class="cart-count" id="cartCount">0</span>
@@ -36,79 +44,91 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="container">
             <div class="hero-content">
-                <h2 class="hero-title">Eng chiroyli sovg'alar</h2>
-                <p class="hero-subtitle">Sevimli odamlaringiz uchun maxsus sovg'alar toping</p>
-                <button class="btn btn-primary" onclick="document.getElementById('products').scrollIntoView({behavior: 'smooth'})">
-                    Mahsulotlarni ko'rish
-                </button>
+                <!-- <h2 class="hero-title">Eng chiroyli sovg'alar</h2>
+                <p class="hero-subtitle">Sevimli odamlaringiz uchun maxsus sovg'alar toping</p> -->
+
+                <div onclick="document.getElementById('products').scrollIntoView({behavior: 'smooth'})"
+                    class="hero_anim">
+                    <img class="hero_img" src="./image/hero.svg" alt="" />
+                    <h3 class="hero-tab">MAHSULOTLAR</h3>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Categories -->
     <section class="categories">
         <div class="container">
             <h2 class="section-title">Kategoriyalar</h2>
             <div class="category-grid">
-                <div class="category-card" data-category="all">
-                    <div class="category-icon">🎁</div>
+                <div class="category-card active" data-category="all">
                     <h3>Barchasi</h3>
                 </div>
-                <div class="category-card" data-category="flowers">
-                    <div class="category-icon">🌸</div>
-                    <h3>Gullar</h3>
+                
+                <div class="category-card" data-category="kepkalar">
+                    <h3>Kepkalar</h3>
                 </div>
-                <div class="category-card" data-category="jewelry">
-                    <div class="category-icon">💍</div>
-                    <h3>Zargarlik buyumlari</h3>
+                
+                <div class="category-card" data-category="kapishonka">
+                    <h3>Kapishonka</h3>
                 </div>
-                <div class="category-card" data-category="electronics">
-                    <div class="category-icon">📱</div>
-                    <h3>Elektronika</h3>
+                
+                <div class="category-card" data-category="termos">
+                    <h3>Termos</h3>
                 </div>
-                <div class="category-card" data-category="books">
-                    <div class="category-icon">📚</div>
-                    <h3>Kitoblar</h3>
+                
+                <div class="category-card" data-category="chashka">
+                    <h3>Chashka</h3>
                 </div>
-                <div class="category-card" data-category="toys">
-                    <div class="category-icon">🧸</div>
+                
+                <div class="category-card" data-category="tashrif qog'oz">
+                    <h3>Tashrif qog'oz</h3>
+                </div>
+                
+                <div class="category-card" data-category="paketlar">
+                    <h3>Paketlar</h3>
+                </div>
+                
+                <div class="category-card" data-category="fudbolka">
+                    <h3>Fudbolka</h3>
+                </div>
+                
+                <div class="category-card" data-category="bloknot">
                     <h3>Bloknot</h3>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Products Section -->
     <section class="products" id="products">
         <div class="container">
             <div class="products-header">
                 <h2 class="section-title">Mahsulotlar</h2>
                 <div class="search-div">
-                    <input type="text" class="products-search-input" id="searchInput" placeholder="Mahsulot qidirish...">
+                    <input type="text" class="products-search-input" id="searchInput"
+                        placeholder="Mahsulot qidirish..." />
                     <button class="clear_btn" id="clearBtn">✖</button>
                 </div>
             </div>
-            <div class="products-grid" id="productsGrid">
-                <!-- Products will be dynamically loaded here -->
-            </div>
+
+            <div class="products-grid" id="productsGrid"></div>
         </div>
     </section>
 
-    <!-- Cart Sidebar -->
     <div class="cart-sidebar" id="cartSidebar">
         <div class="cart-header">
             <h2>Savat</h2>
             <button class="close-cart" id="closeCart">✕</button>
         </div>
+
         <div class="cart-items" id="cartItems">
             <div class="empty-cart">
                 <p>Savat bo'sh</p>
             </div>
         </div>
+
         <div class="cart-footer">
             <div class="cart-total">
                 <span>Jami:</span>
@@ -118,26 +138,73 @@
         </div>
     </div>
 
-    <!-- Cart Overlay -->
     <div class="cart-overlay" id="cartOverlay"></div>
 
-    <!-- Product Detail Modal -->
     <div class="product-modal" id="productModal">
         <div class="product-modal-overlay" id="productModalOverlay"></div>
         <button class="close-product-modal" id="closeProductModal">✕</button>
+
         <div class="product-modal-content">
-            <div class="product-detail-container" id="productDetailContainer">
-                <!-- Product details will be loaded here -->
-            </div>
+            <div class="product-detail-container" id="productDetailContainer"></div>
         </div>
     </div>
 
-    <!-- About Section -->
+<div class="order-modal" id="orderModal">
+    <div class="order-modal-overlay" id="orderModalOverlay" data-close="1"></div>
+
+    <div class="order-modal-content" role="dialog" aria-modal="true" aria-labelledby="orderModalTitle">
+        <h2 id="orderModalTitle">Buyurtma ma'lumotlari</h2>
+
+        <div class="order-modal-body">
+            <label for="orderName">Ism</label>
+            <input type="text" id="orderName" placeholder="Ismingizni kiriting" required />
+            <label for="orderPhone">Telefon raqamingiz</label>
+            <div class="phone_number">
+                <label for="orderPhone">+998</label>
+                <input type="tel" id="orderPhone" placeholder="90 123 45 67" />
+            </div>
+
+
+         
+
+            <div class="order-delivery-group radio-input">
+                <label for="value-1">Ofisdan olish
+                    <input type="radio" id="value-1" name="deliveryMethod" value="pickup" checked />
+                </label>
+                <label for="value-3">Yetkazib berish
+                    <input type="radio" id="value-3" name="deliveryMethod" value="delivery" />
+                </label>
+            </div>
+
+
+
+
+
+            <div class="order-map-wrapper" id="orderMapWrapper" style="display:none;">
+                <input type="text" id="orderMapSearch" placeholder="Manzil qidiring..." />
+                <div id="orderMap" style="width:100%; height:250px; margin-top:10px;"></div>
+            </div>
+
+            <input type="hidden" id="orderAddress" />
+
+            <label for="orderMessage">Ixtiyoriy izoh</label>
+            <textarea id="orderMessage" placeholder="Manzil haqida qo'shimcha ma'lumot yozishingiz mumkin..."></textarea>
+        </div>
+
+        <div class="order-modal-actions">
+            <button id="cancelOrderBtn" class="btn btn-secondary" type="button">Bekor qilish</button>
+            <button id="confirmOrderBtn" class="btn btn-primary" type="button">Zakaz berish</button>
+        </div>
+    </div>
+</div>
+
+    
     <section class="about" id="about">
         <div class="container">
             <h2 class="section-title">Biz haqimizda</h2>
             <div class="about-content">
-                <p>Gift Market - bu sevimli odamlaringiz uchun eng chiroyli va maxsus sovg'alarni topish uchun eng yaxshi joy. Biz sizga keng assortimentdagi mahsulotlarni taklif qilamiz.</p>
+                <p>Gift Market - bu sevimli odamlaringiz uchun eng chiroyli va maxsus sovg'alarni topish uchun eng
+                    yaxshi joy.</p>
                 <div class="features">
                     <div class="feature">
                         <div class="feature-icon">🚚</div>
@@ -159,43 +226,30 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
     <section class="contact" id="contact">
         <div class="container">
             <h2 class="section-title">Aloqa</h2>
             <div class="contact-content">
                 <div class="contact-info">
-                    <div class="contact-item">
-                        <span class="contact-icon">📞</span>
-                        <span>+998 90 123 45 67</span>
-                    </div>
-                    <div class="contact-item">
-                        <span class="contact-icon">✉️</span>
-                        <span>info@giftmarket.uz</span>
-                    </div>
-                    <div class="contact-item">
-                        <span class="contact-icon">📍</span>
-                        <span>Toshkent shahri</span>
-                    </div>
+                    <div class="contact-item"><span class="contact-icon">📞</span><span>+998 90 123 45 67</span></div>
+                    <div class="contact-item"><span class="contact-icon">✉️</span><span>info@giftmarket.uz</span></div>
+                    <div class="contact-item"><span class="contact-icon">📍</span><span>Toshkent shahri</span></div>
                 </div>
-                <form class="contact-form" id="contactForm">
-                    <input type="text" placeholder="Ismingiz" required>
-                    <input type="email" placeholder="Email" required>
-                    <textarea placeholder="Xabaringiz" rows="5" required></textarea>
-                    <button type="submit" class="btn btn-primary">Yuborish</button>
-                </form>
+                <!-- <div class="map-skeleton" id="mapSkeleton"></div> -->
+
+                <!-- <iframe 
+                id="contactMap"
+                class="contact-map"
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d5989.838198950783!2d69.28846902316853!3d41.354112122468145!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38aef3532bfc9f13%3A0x7d08b465abb8d658!2sShaxriston%20(Habib%20Abdullayev)!5e0!3m2!1suz!2s!4v1772005667118!5m2!1suz!2s"
+                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe> -->
             </div>
         </div>
     </section>
-
-    <!-- Footer -->
+    
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-section">
-                    <h3>Gift Market</h3>
-                    <p>Eng chiroyli sovg'alar</p>
-                </div>
                 <div class="footer-section">
                     <h4>Havolalar</h4>
                     <a href="#home">Bosh sahifa</a>
@@ -205,19 +259,23 @@
                 </div>
                 <div class="footer-section">
                     <h4>Ijtimoiy tarmoqlar</h4>
-                    <div class="social-links">
-                        <a href="#">Facebook</a>
-                        <a href="#">Instagram</a>
-                        <a href="#">Telegram</a>
-                    </div>
+                    <a href="#">Instagram</a>
+                    <a href="#">Telegram</a>
+                    <a href="#">Telegram</a>
+                    <a href="#">Facebook</a>
                 </div>
             </div>
+            
             <div class="footer-bottom">
-                <p>&copy; 2026 Gift Market. Barcha huquqlar himoyalangan.</p>
+                <p>&copy; 2026 Prin City. Barcha huquqlar himoyalangan.</p>
             </div>
         </div>
     </footer>
-
-    <script src="script.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <!-- <script src="./js/app.js" defer></script> -->
+    <script src="./js/products.js" defer></script>
+    <script src="./js/shop.js" defer></script>
+    <script src="./js/ui.js" defer></script>
+    
 </body>
 </html>
