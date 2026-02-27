@@ -141,7 +141,7 @@ async function loadProducts() {
         id: Number(item.id),
         name: getSafeText(item.name) || `Mahsulot ${item.id}`,
         description: getSafeText(item.about) || `Kategoriya: ${category}`,
-        price: Number(item.price || 0) * 1000,
+        price: Number(item.price || 0),
         category,
         categoryName: categoryNames[category] || category,
         sale: item.sale,
